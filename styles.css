@@ -1,19 +1,22 @@
-/* Fichier styles.css (Version Améliorée) */
+/* Fichier styles.css (Version PRO - Plus de couleurs et style) */
 :root {
-    --primary-color: #007bff; /* Bleu principal */
-    --primary-dark: #0056b3; /* Bleu plus foncé au survol */
-    --secondary-color: #f4f4f4; /* Gris clair */
+    --primary-color: #007bff; /* Bleu d'Annonce */
+    --primary-dark: #0056b3; 
+    --accent-color: #17a2b8; /* Turquoise / Cyan - Accentuation Technique */
+    --accent-dark: #0d8299;
     --text-color: #333;
     --white: #fff;
-    --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --light-bg: #f8f9fa; /* Arrière-plan très clair */
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-deep: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne */
     margin: 0;
     padding: 0;
     color: var(--text-color);
-    background-color: var(--white);
+    background-color: var(--light-bg); /* Fond très légèrement gris */
     line-height: 1.6;
 }
 
@@ -21,8 +24,8 @@ body {
 .navbar {
     background-color: var(--primary-color);
     padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: sticky; /* Reste en haut lors du défilement */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: sticky; 
     top: 0;
     z-index: 1000;
 }
@@ -39,108 +42,106 @@ body {
 .nav-logo a {
     color: var(--white);
     text-decoration: none;
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.6em;
+    font-weight: 700;
 }
 
 .nav-links a {
     color: var(--white);
     text-decoration: none;
-    margin-left: 25px;
+    margin-left: 30px;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color); /* Survol en couleur accentuée */
 }
 
 /* --- General Layout --- */
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
 h1 {
-    font-size: 2.2em;
-    color: var(--primary-dark);
+    font-size: 2.8em;
+    color: var(--text-color);
+    margin-bottom: 5px;
 }
 
 h2 {
     font-size: 1.8em;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 8px;
-    margin-top: 40px;
-}
-
-/* --- Hero Section (Accueil) --- */
-.hero {
-    background-color: var(--secondary-color);
-    padding: 80px 40px;
+    color: var(--accent-dark);
     text-align: center;
-    border-radius: 12px;
-    margin-bottom: 40px;
-    box-shadow: var(--shadow);
+    margin: 40px 0 20px;
 }
 
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: var(--text-color);
+/* --- Hero Section (Accueil) - Utilisation du contraste --- */
+.hero {
+    background-color: var(--white);
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-deep);
+    border-top: 5px solid var(--primary-color); /* Bande de couleur pour le style */
+}
+
+.hero .tagline {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-top: -10px;
+    margin-bottom: 25px;
 }
 
 .hero p {
     font-size: 1.1em;
     color: #555;
-    margin-bottom: 30px;
+    max-width: 700px;
+    margin: 0 auto 30px;
 }
 
-/* --- Call-to-Action Button --- */
-.cta-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 15px 30px;
-    font-size: 1.1em;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.2s;
-    font-weight: bold;
+/* --- Skills Section (Amélioration visuelle) --- */
+.skills-wrapper {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    border-left: 5px solid var(--accent-color);
 }
 
-.cta-button:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-/* --- Skills / Card List --- */
 .skills-list {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .skills-list li {
-    background: var(--white);
-    border: 1px solid #ddd;
-    padding: 15px 20px;
-    border-radius: 8px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
     font-size: 1em;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: default;
 }
 
 .skills-list li:hover {
-    box-shadow: var(--shadow);
+    background-color: var(--accent-dark); /* Changement de couleur au survol */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* --- Styles pour les autres pages (assurez-vous qu'ils restent propres) --- */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -153,18 +154,13 @@ h2 {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s, border-color 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-color);
-}
-
-.card h3 {
-    margin-top: 0;
-    color: var(--primary-color);
+    border-color: var(--accent-color);
 }
 
 .card a.button {
